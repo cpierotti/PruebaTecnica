@@ -1,0 +1,21 @@
+<div class="container">
+    <input type="number" [(ngModel)]="longitud" class="form-control" placeholder="longitud" aria-label="Longitud" aria-describedby="basic-addon1">
+    <select class="custom-select" [(ngModel)]="nivel" id="inputGroupSelect03" aria-label="Example select with button addon">
+    <option value="SIMPLE">Simple</option>
+    <option value="ADVANCED">Advanced</option>
+    <option value="MAX">Max</option>
+  </select>
+    <button type="button" (click)="generador()" class="btn btn-primary">Generar</button>
+</div>
+<div *ngIf="activo" class="container">
+    <div class="container">
+        <p>{{objClave.seguridad}}</p>
+    </div>
+    <div class="container">
+        <p>{{objClave.clave}}</p>
+
+    </div>
+</div>
+<div *ngIf="validacion" class="alert alert-danger container" role="alert">
+    Longitud no valida
+</div>
